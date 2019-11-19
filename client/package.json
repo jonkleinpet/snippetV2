@@ -5,7 +5,11 @@
   "dependencies": {
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
-    "react-scripts": "3.2.0"
+    "react-scripts": "3.2.0",
+    "jwt-decode": "^2.2.0",
+    "prismjs": "^1.16.0",
+    "react-router-dom": "^5.0.0",
+    "react-simple-code-editor": "^0.9.13"
   },
   "scripts": {
     "start": "react-scripts start",

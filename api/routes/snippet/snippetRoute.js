@@ -5,8 +5,8 @@ const { requireAuth } = require('../../services/jwtService');
 const snippetRoute = express.Router();
 
 snippetRoute
-    .route('/')
-    .get(requireAuth, (req, res, next) => {
+    .route('/snippets')
+    .get(requireAuth, async (req, res, next) => {
         const db = req.app.get('db');
         const { id } = req.user[0];
 
@@ -18,4 +18,6 @@ snippetRoute
         catch (error) {
             next(error);
         }
-    })
+    });
+
+module.exports = snippetRoute;

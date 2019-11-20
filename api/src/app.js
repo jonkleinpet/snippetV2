@@ -4,6 +4,7 @@ const morgan = require('morgan');
 const cors = require('cors');
 const helmet = require('helmet');
 const userRoute = require('../routes/user/userRoute');
+const snippetRoute = require('../routes/snippet/snippetRoute');
 const { NODE_ENV } = require('./config');
 
 const app = express();
@@ -19,6 +20,7 @@ app.use(cors());
 
 // routes
 app.use('/api', userRoute);
+app.use('/api/snippets', snippetRoute);
 
 // basic error handling
 app.use(function errorHandler(error, req, res, next) {
@@ -30,10 +32,6 @@ app.use(function errorHandler(error, req, res, next) {
     response = { message: error.message, error };
   }
   res.status(500).json(response);
-});
-
-app.get('/', (req, res) => {
-  res.send('Hello, world!');
 });
 
 module.exports = app;
